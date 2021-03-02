@@ -248,15 +248,24 @@ var buggy = {
 
 
 let backgroundIMG
+let cloud1
+let cloud2
+let cloud1PositionX
+let cloud2PositionX
+
 
 function preload() {
     console.log(windowWidth)
     backgroundIMG = loadImage('/assets/bg.png');
+    cloud1 = loadImage('/assets/cloud1.png')
+    cloud2 = loadImage('assets/cloud2.png')
     // loveYouImg = createImg('assets/loveYouImage.png', 'loveYouImge').size(windowWidth * 0.212, windowWidth * 0.0778)
     //     .position(windowWidth / 4 + 20, windowHeight / 4 + 20).mousePressed(console.log("works"))
     // missYouImg = createImg('assets/missYouImage.png', 'missYouImage').size(windowWidth * 0.212, windowWidth * 0.0778)
     //     .position(windowWidth / 2 + 40, windowHeight / 4 + 20).mousePressed(buggy.sendMissYou)
     // backgroundIMG.resize(windowWidth, 0.520 * windowWidth)
+    cloud1PositionX = windowWidth - windowWidth / 5
+    cloud2PositionX = windowWidth / 12
 }
 
 function setup() {
@@ -268,6 +277,8 @@ function setup() {
         .position(windowWidth / 4, windowHeight / 4).mousePressed(toSendLove)
     missYouImg = createImg('assets/missYouImage.png', 'missYouImage').size(windowWidth * 0.212, windowWidth * 0.0778)
         .position(windowWidth / 2 + windowWidth / 20, windowHeight / 4).mousePressed(toSendMissYou)
+    // cloud1 = createImg('assets/cloud1.png', 'cloud1.png').size(windowWidth * 0.2, windowWidth * 0.0918)
+    //     .position(cloud1PositionX, windowHeight / 2.80)
 }
 
 function toSendLove() {
@@ -292,11 +303,35 @@ function releasedToSendMissYou() {
 
 function draw() {
     createCanvas(windowWidth, windowHeight)
-
+    
     background(255, 244, 229)
+
+    // image(cloud1, 0, 100, 100, 100)
+    // cloud1.position(cloud1PositionX, windowHeight / 2.80)
+    // cloud1PositionX--
+
+    // if (cloud1PositionX < -200) {
+    //     cloud1PositionX = windowWidth
+    // }
 
     image(backgroundIMG, 0, windowHeight / 2 - windowWidth * 0.625 / 2, windowWidth, windowWidth * 0.625);
 
+    image(cloud1, cloud1PositionX, windowHeight / 2.80, windowWidth * 0.2, windowWidth * 0.0918)
+
+    cloud1PositionX--
+
+    image(cloud2, cloud2PositionX, windowHeight / 18, windowWidth * 0.2, windowWidth * 0.0918)
+
+    cloud2PositionX--
+
+    if (cloud1PositionX < -200) {
+        cloud1PositionX = windowWidth
+    }
+
+    if (cloud2PositionX < -200) {
+        cloud2PositionX = windowWidth
+    }
+    
     if (buggy.buggyAtHome == true && buggy.partnerAtHome == true && startCount == true) {
         count += 1
         console.log(count)

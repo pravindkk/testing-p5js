@@ -1,0 +1,81 @@
+img {
+    width: 100%;
+    height: auto;
+  }
+
+@font-face {
+    font-family: "Pamela";
+    src: url("Pamela.otf") format("opentype");
+ }
+
+input {
+    font-family: "Pamela";
+    font-size: 150%;
+    width: 100%
+    
+}
+
+select {
+    font-family: "Pamela";
+    font-size: 130%;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+}
+
+option {
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.child {
+/* ... */
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+
+.chatroomname {
+    border-radius: 25px;
+    border: 2px solid #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    /* background: url(paper.gif);
+    background-position: center top;
+    background-repeat: repeat;
+    padding: 20px;  */
+    width: 82vw;
+    height: 4vh;  
+    position: absolute;
+    left: 10vh;
+    top: 28vh;
+    /* top: 50% */
+
+  }
+
+  .inputusername {
+    border-radius: 25px;
+    border: 2px solid #cccccc;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    /* align-items: center; */
+    text-align: center;
+    /* background: url(paper.gif);
+    background-position: center top;
+    background-repeat: repeat;
+    padding: 20px;  */
+    width: 83vw;
+    height: 5vh;
+    position: absolute;
+    left: 10vh;
+    top: 20vh;
+    /* top: 50% */
+
+  }
