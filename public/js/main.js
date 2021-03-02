@@ -271,11 +271,23 @@ function setup() {
 }
 
 function toSendLove() {
+    loveYouImg.position(windowWidth / 4, windowHeight / 4 + 2)
+    loveYouImg.mouseReleased(releasedToSendLove)
     buggy.sendLove()
 }
 
+function releasedToSendLove() {
+    loveYouImg.position(windowWidth / 4, windowHeight / 4)
+}
+
 function toSendMissYou() {
+    missYouImg.position(windowWidth / 2 + windowWidth / 20, windowHeight / 4 + 2)
+    missYouImg.mouseReleased(releasedToSendMissYou)
     buggy.sendMissYou()
+}
+
+function releasedToSendMissYou() {
+    missYouImg.position(windowWidth / 2 + windowWidth / 20, windowHeight / 4)
 }
 
 function draw() {
